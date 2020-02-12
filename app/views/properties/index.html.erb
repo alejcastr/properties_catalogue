@@ -1,1 +1,19 @@
-hola
+<% @properties.each do |property| %>
+
+
+
+<h1><%= property.title %></h1>
+<%= property.user_id %>
+<div> </div>
+<%= property.description %>
+
+<%= image_tag(property.image, style: "width: 90vw") %>
+
+
+<% if current_user.id == property.user_id%>
+    <%= button_to "Edit", "/properties/#{property.id}/edit", method: :get %>
+
+    <%= button_to "Delete", property, method: :delete%>
+
+    <% end %>
+<% end %>
