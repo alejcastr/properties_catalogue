@@ -1,0 +1,43 @@
+<%= form_with model: @property do |form| %>
+<h1> Edit Property </h1>
+
+<% if current_user.id == @property.user_id %>
+   
+
+    <p>
+    </p>
+
+    <div class="field">
+        <%= form.label :Name %>
+        <%= form.text_field :name %>
+
+    <div class="field">
+        <%= form.label :Bedrooms %>
+        <%= form.select :bedrooms,[1,2,3,4,5,6] %>
+    </div>
+
+    <div class="field">
+        <%= form.label :Bathrooms %>
+        <%= form.select :bathrooms, [1,2,3,4,5,6] %>
+    </div>
+
+    <div class="field">
+        <%= form.label :Parking_Spaces %>
+        <%= form.select :parking_spaces, [1,2,3,4,5,6] %>
+    </div>
+
+    <div class="field">
+        <%= form.label :Information %>
+        <%= form.text_area :information, size: "24x6" %>
+    </div>
+
+    <div class="field">
+        <%= form.label :image %>
+        <%= form.file_field :image %>
+    </div>
+
+    <div class="actions">
+        <%= form.submit %>
+    </div>
+    <% end %>
+<% end %>

@@ -11,24 +11,8 @@
   </head>
 
   <body>
-  <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
-<a class="navbar-brand" href="#">Property Catalogue</a>
-  <div class="collapse navbar-collapse" id="navbarText">
-    <ul class="navbar-nav mr-auto">
-
-    </ul>
-    <span class="navbar-text">
-      Navbar text with an inline element
-    </span>
-  </div>
-</nav>
-    <% if notice %>
-      <p class="alert alert-success"><%= notice %></p>
-    <% end %>
-    <% if alert %>
-      <p class="alert alert-danger"><%= alert %></p>
-    <% end %>
-
+  <nav class="navbar navbar-light" style="background-color: #eaec1f;">
+  <a class="navbar-brand" href="#">Property Catalogue</a>
   <p class="navbar-text float-right">
   <% if user_signed_in? %>
     Logged in as <strong><%= current_user.email %></strong>.
@@ -38,7 +22,25 @@
     <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
     <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
   <% end %>
-</p>
+  </p>
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mr-auto">
+
+    </ul>
+    <span class="navbar-text">
+      Navbar text with an inline element
+    </span>
+  </div>
+  </nav>
+    
+    <% if notice %>
+      <p class="alert alert-success"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
+
+  
     <%= yield %>
 
   </body>

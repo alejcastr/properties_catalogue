@@ -1,0 +1,35 @@
+<div class="field">
+    
+    
+<label>Property Name:</label>
+<div></div>
+<h1><%= @property.name %></h1>
+<div></div>
+<label>User:</label>
+<div></div>
+<h1><%= @property.user_id %></h1>
+<div></div>
+<label>Bedrooms:</label>
+<div></div>
+<h1><%= @property.bedrooms %></h1>
+<div></div>
+<label>Bathrooms:</label>
+<div></div>
+<h1><%= @property.bathrooms %></h1>
+<div></div>
+<label>Parking Spaces:</label>
+<div></div>
+<h1><%= @property.parking_spaces %></h1>
+<div></div>
+<label>Property Information:</label>
+<div></div>
+<h1><%= @property.information %></h1>
+
+<% if current_user.id == @property.user_id%>
+    <%= button_to "Edit", "/properties/#{@property.id}/edit", method: :get %>
+
+    <%= button_to "Delete", @property, method: :delete%>
+
+    <% end %>
+
+<%= image_tag(@property.image, style: "width: 90vw") if @property.image.attached? %>
