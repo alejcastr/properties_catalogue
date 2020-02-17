@@ -1,7 +1,7 @@
 class PropertiesController < ApplicationController
     before_action :authenticate_user!
     def index
-        @properties = current_user.properties
+        @properties = Property.all
     end
 
     def show
@@ -9,7 +9,7 @@ class PropertiesController < ApplicationController
     end
 
     def new
-        @property = Property.new 
+        @property = Property.new()
     end
 
     def create

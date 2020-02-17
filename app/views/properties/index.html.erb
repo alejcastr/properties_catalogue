@@ -1,11 +1,21 @@
 <div class="container-fluid">
 
+    <div class="jumbotron">
+         <h1 class="display-3">Real estate properties...</h1>
+        <p class="lead">More than just a place!</p>
+        <hr class="my-3">
+        <p>Create a new property:</p>
+        <p class="lead">
+        <%= link_to "New Property", new_property_path, class: "btn btn-primary" %>
+        </p>
+    </div>
+
   
     <div class="row">
         <% @properties.each do |property| %>
             <div class="col-3">
                 <div class="card" style="width: 18rem;">
-                    <%= image_tag property.image, class: "card-img-top" %>
+                    <%= link_to(image_tag(property.image, class: "card-img-top"), property) %>
                     <div class="card-body">
                         <h1 class="card-title"><%= property.name %></h1>
                         <p class="card-text"><%= property.user_id %></p>
