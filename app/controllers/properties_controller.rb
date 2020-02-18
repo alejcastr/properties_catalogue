@@ -1,5 +1,5 @@
 class PropertiesController < ApplicationController
-    before_action :authenticate_user!
+    before_action :authenticate_user!, except: [:index]
     def index
         @properties = Property.all
     end
